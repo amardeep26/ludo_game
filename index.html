@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ludo Prediction Game</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>💰 Coins: <span id="coins">1000</span></h2>
+
+<div style="margin:15px 0;">
+    <input
+        type="number"
+        id="betAmount"
+        placeholder="Enter Bet Amount"
+        min="10"
+        style="
+        width:100%;
+        padding:12px;
+        border-radius:10px;
+        border:1px solid #ccc;
+        "
+    >
+</div>
+
+<h3 id="multiplierText">Multiplier: --</h3>
+
+<audio id="rollSound" preload="auto">
+    <source src="sounds/roll.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="winSound" preload="auto">
+    <source src="sounds/win.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="loseSound" preload="auto">
+    <source src="sounds/lose.mp3" type="audio/mpeg">
+</audio>   
+
+<button class="mode-btn" onclick="toggleMode()">🌙 Dark</button>
+
+<h1>🎲 Ludo Prediction Game</h1>
+
+<h3>Select Your Prediction</h3>
+
+<div class="prediction">
+    <button onclick="selectRange('1-6')" id="r1">1 - 6</button>
+    <button onclick="selectRange('7-12')" id="r2">7 - 12</button>
+    <button onclick="selectRange('13-18')" id="r3">13 - 18</button>
+</div>
+
+<div class="dice-container">
+    <div class="dice" id="dice1">🎲</div>
+    <div class="dice" id="dice2">🎲</div>
+    <div class="dice" id="dice3">🎲</div>
+</div>
+
+<button class="roll-btn" onclick="rollDice()">
+🎲 Roll Dice
+</button>
+
+<div class="sum" id="sum"></div>
+<div class="result" id="result"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
